@@ -1,0 +1,20 @@
+erDiagram
+PATIENT ||--o{ APPOINTMENT : attends
+%% s1
+CLINICIAN ||--o{ APPOINTMENT : conducts
+%% s2
+SPECIALTY ||--o{ CLINICIAN : primary_specialty
+%% s3
+CLINIC ||--o{ APPOINTMENT : hosts
+%% s4
+APPOINTMENT ||--o{ DIAGNOSIS : results_in
+%% s5
+APPOINTMENT ||--o{ PRESCRIPTION : may_generate
+%% s6
+PRESCRIPTION ||--|{ PRESCRIPTION_ITEM : contains
+%% s7
+MEDICINE ||--o{ PRESCRIPTION_ITEM : item_for
+%% s8
+APPOINTMENT ||--o| FOLLOW_UP_PLAN : may_generate
+%% s9
+APPOINTMENT ||--o{ APPOINTMENT_AUDIT : status_changes
